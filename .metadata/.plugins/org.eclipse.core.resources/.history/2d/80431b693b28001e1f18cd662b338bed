@@ -1,0 +1,18 @@
+package com.example.citizen.rest.resource;
+
+import jakarta.enterprise.inject.Produces;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("/registerCitizen")
+public class CitizenResource {
+
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String registerCitizen() {
+		return "The Citizen registered";
+	}
+
+	
+}

@@ -1,0 +1,43 @@
+package com.example.citizen.rest.resource;
+
+import java.time.Instant;
+
+import com.example.citizen.rest.model.Citizen;
+
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+@Path("/registerCitizen")
+public class CitizenResource {
+	
+	/*@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String registerCitizen() {
+		return "The citizen registered";*/
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public Response registerCitizen(String name,
+			String surname,
+			String birthDate,
+			String mothername,
+			String fathername) {
+		
+		Citizen citizen = new Citizen();
+		citizen.setName(name);
+		citizen.setSurname(surname);
+		citizen.setBirthDate(Instant.parse(birthDate));
+		citizen.setMothername(mothername);
+		citizen.setFathername(fathername);
+		citizen.setNINumber("later");
+		return Response.status(201).entity(citizen).build();
+		
+		
+	}
+}

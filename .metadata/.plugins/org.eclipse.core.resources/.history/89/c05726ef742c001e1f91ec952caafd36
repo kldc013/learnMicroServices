@@ -1,0 +1,5 @@
+package com.example.nin.rest.resource;
+
+public class NINResource {
+
+}

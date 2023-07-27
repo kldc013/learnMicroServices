@@ -1,0 +1,12 @@
+package com.example.citizen.rest.resource;
+
+import jakarta.ws.rs.Path;
+
+@Path("/registerCitizen")
+public class CitizenResource {
+
+	public String registerCitizen() {
+		return "The citizen registered";
+		
+	}
+}
